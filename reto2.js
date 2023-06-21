@@ -37,8 +37,16 @@ async function main(){
         // let [result] = await connection.execute(sql6)
         // console.log(result)
 
-        let sql7 = "SELECT student_id, mark FROM academia.marks WHERE(student_id BETWEEN 1 AND 20) OR mark > 8 AND YEAR(date) = 2022"
-        let [result] = await connection.execute(sql7)
+        // let sql7 = "SELECT student_id, mark FROM academia.marks WHERE(student_id BETWEEN 1 AND 20) OR mark > 8 AND YEAR(date) = 2022"
+        // let [result] = await connection.execute(sql7)
+        // console.log(result)
+
+        // let sql8 = "SELECT AVG(mark) AS media FROM academia.marks WHERE date BETWEEN '2022-05-01' AND '2023-05-01' GROUP BY id_subjects"
+        // let [result] = await connection.execute(sql8)
+        // console.log(result)
+
+        let sql9 = "SELECT AVG(mark) FROM academia.marks WHERE date BETWEEN '2022-05-01' AND '2023-05-01' GROUP BY student_id"
+        let [result] = await connection.execute(sql9)
         console.log(result)
 
     }
